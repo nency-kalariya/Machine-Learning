@@ -1,0 +1,72 @@
+
+Decision Treee Rregression
+---------------------------------------------------------------------------------------------
+from sklearn import linear_model,model_selection import pandas as pd
+import numpy as np
+from sklearn.tree import DecisionTreeRegressor
+
+#Load the dataset
+data-pd.read_csv("Salary.csv")
+
+#idnetify x and y
+x=np.array(data. Years Experience).reshape(-1,1)
+y=np.array(data.Salary).reshape(-1,1)
+
+#split the dataset in training and testing
+xtrain,xtest,ytrain,ytest=model_selection.train_test_split(x,y,test_size=0.3)
+
+#Load the model
+regressor-DecisionTreeRegressor()
+
+#Train the model
+regressor.fit(xtrain,ytrain)
+
+#test the model
+ytest_predicted-regressor.predict(xtest)
+print(xtest) print(ytest)
+print(ytest_predicted)
+
+#Model Evaluation
+print("Mean Absolute Error:",mean_absolute_error(ytest,ytest_predicted)) 
+print("Mean Squared Error:",mean_squared_error(ytest,ytest_predicted))
+print("Mean absolute percentage:",mean_absolute_percentage_error(ytest,ytest_predicted))
+
+
+================================================================================================================================================================
+
+
+Logistic Rregression Classifier
+-------------------------------------------------------------------------------
+
+from sklearn import model_selection
+from sklearn.datasets import load_breast_cancer 
+from sklearn.linear_model import LogisticRegression import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+#Load the dataset : cancer 
+dataset=db.load_breast_cancer()
+
+#Identify X and y
+x=np.array(dataset.data[:,0]).reshape(-1,1) 
+y=np.array(dataset.target).reshape(-1,1)
+
+#Split the dataset into training & testing
+xtrain,xtest,ytrain,ytest=model_selection.train_test_split(x,y,test_size=0.3)
+
+#Load the classifier 
+classifier=LogisticRegression()
+
+#Train the model
+classifier.fit(xtrain,ytrain)
+
+#test the classifier
+ytest_predicted=classifier.predict(xtest)
+
+print(xtest) print(ytest)
+print(ytest_predicted)
+
+#Visualize the results
+ plt.scatter(xtest,ytest) 
+plt.scatter(xtest,ytest_predicted)
+plt.show()
